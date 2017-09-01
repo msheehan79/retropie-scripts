@@ -1,0 +1,29 @@
+## Controller IDs
+## Define the preferred order of joysticks below, and the full path to the id file
+## Format: controllern_id=/path/to/id-file
+## Example: controller1_id=/dev/input/by-id/usb-045e_0291-event-joystick
+controller1_id=/dev/input/by-id/usb-045e_0291-event-joystick
+controller2_id=/dev/input/by-id/usb-045e_0291-if02-event-joystick
+controller3_id=/dev/input/by-id/usb-Logitech_Logitech_Dual_Action-event-joystick
+
+## Controller 1 Configuration
+## Map the appropriate xboxdrv key mapping parameters as well as a unique device name and calibration settings here
+## Format: controllern_keymap, controllern_absmap, controllern_calibration, controllern_devicename
+## Repeat this format for each additional controller defined in the first section
+## Do not put quotes around the device name, the script will handle this
+controller1_absmap=ABS_X=x1,ABS_Y=y1,ABS_RX=x2,ABS_RY=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y,ABS_Z=lt,ABS_RZ=rt
+controller1_keymap=BTN_SOUTH=a,BTN_EAST=b,BTN_NORTH=x,BTN_WEST=y,BTN_TL=lb,BTN_TR=rb,BTN_THUMBL=tl,BTN_THUMBR=tr,BTN_MODE=guide,BTN_SELECT=back,BTN_START=start
+controller1_calibration=x1=-32767:0:32767,y1=-32767:0:32767,x2=-32767:0:32767,y2=-32767:0:32767
+controller1_devicename=XBox 360 Number 1
+
+## Controller 2 Configuration
+controller2_absmap=ABS_X=x1,ABS_Y=y1,ABS_RX=x2,ABS_RY=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y,ABS_Z=lt,ABS_RZ=rt
+controller2_keymap=BTN_SOUTH=a,BTN_EAST=b,BTN_NORTH=x,BTN_WEST=y,BTN_TL=lb,BTN_TR=rb,BTN_THUMBL=tl,BTN_THUMBR=tr,BTN_MODE=guide,BTN_SELECT=back,BTN_START=start
+controller2_calibration=x1=-32767:0:32767,y1=-32767:0:32767,x2=-32767:0:32767,y2=-32767:0:32767
+controller2_devicename=XBox 360 Number 2
+
+## Controller 3 Configuration
+controller3_absmap=ABS_X=x1,ABS_Y=y1,ABS_Z=x2,ABS_RZ=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y
+controller3_keymap=BTN_TRIGGER=x,BTN_TOP=y,BTN_THUMB=a,BTN_THUMB2=b,BTN_BASE3=back,BTN_BASE4=start,BTN_BASE=lt,BTN_BASE2=rt,BTN_TOP2=lb,BTN_PINKIE=rb,BTN_BASE5=tl,BTN_BASE6=tr
+controller3_calibration=x1=-32767:0:32767,y1=-32767:0:32767,x2=-32767:0:32767,y2=-32767:0:32767
+controller3_devicename=Logitech Pad
