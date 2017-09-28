@@ -26,3 +26,5 @@ if [ ${#player2[@]} -gt 0 ]; then
 fi
 #echo $joycommand >> /dev/shm/runcommand.log
 eval $joycommand
+# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
+sleep 0.5
