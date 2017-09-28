@@ -126,22 +126,34 @@ case $1 in
 	;;
 
 	amiga)
-		$xboxkill
-		joycommand="$basicConfig ${player1['id']} ${player1['map']} $amiga &"
-		if [ ${#player2[@]} -gt 0 ]; then
-			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
-		fi
-		eval $joycommand
+		case $rom in
+			"1943.uae")
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $amiga_1943 &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
+				fi
+				eval $joycommand		
+			;;
+			*)
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $amiga &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
+				fi
+				eval $joycommand
+			;;
+		esac
 	;;
 
 	# RetroArch emulators
-	atari7800|gamegear|gb|gbc|gba|mastersystem|megadrive|msx|nes|pce|pcenginecd|sega32x|segacd|sgfx|snes|vb)
+	atari7800|fds|gamegear|gb|gbc|gba|mastersystem|megadrive|msx|msx2|neogeo|nes|pce|pcenginecd|psx|sega32x|segacd|sgfx|snes|virtualboy|x68000)
 		$xboxkill
 		joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
 		if [ ${#player2[@]} -gt 0 ]; then
 			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"	
 		fi
-		
+
 		#echo $joycommand >> /dev/shm/runcommand.log
 		eval $joycommand
 		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
@@ -162,14 +174,29 @@ case $1 in
 		case $rom in
 			"amidar.zip"|"atetris.zip"|"puckman.zip") # Configuration used only for these ROMs
 				$xboxkill
-				joycommand="$basicConfig $fourway &"
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $fourway &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $fourway &"
+				fi
 				eval $joycommand
 			;;
 			*) # Configuration for every other ROMs on this emulator
 				$xboxkill
-				joycommand="$basicConfig &"
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
+				fi
 				eval $joycommand
 			;;
 		esac
+		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
+		sleep 0.5
+		map_joystick_indexes		
+		sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/all/retroarch.cfg
+		sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
+		if [ ${#player2[@]} -gt 0 ]; then
+			sed -i "s/input_player2_joypad_index\s*\=\s*.*/input_player2_joypad_index = ${player2['jsindex']}/g" /opt/retropie/configs/all/retroarch.cfg
+			sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
+		fi
 	;;
 esac
