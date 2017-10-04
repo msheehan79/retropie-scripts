@@ -1,0 +1,12 @@
+# halt-and-restart file, start a daemon on startup
+# file: /etc/systemd/system/halt-and-restart.service
+#
+[Unit]
+Description=Start halt-and-restart daemon
+
+[Service]
+RemainAfterExit=true
+ExecStart=/usr/bin/python /home/pi/scripts/halt-and-restart.py
+
+[Install]
+WantedBy=multi-user.target
