@@ -1,0 +1,14 @@
+# killes file, makes sure EmulationStation exits cleanly so metadata is saved on shutdown
+# file: /etc/systemd/system/killes.service
+#
+[Unit]
+Description=Kill EmulationStation
+After=autologin@tty1.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/home/pi/scripts/killes.sh
+
+[Install]
+WantedBy=multi-user.target
