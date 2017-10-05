@@ -18,4 +18,5 @@ while True:
                 print("Button press detected")
         else:
                 print("Shutdown process initiated")
+                subprocess.call("/home/pi/scripts/killes.sh", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                 subprocess.call("/sbin/shutdown -h now", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
