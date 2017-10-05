@@ -168,6 +168,22 @@ case $1 in
 	;;
 
 	mame-libretro)
+		$xboxkill
+		joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
+		if [ ${#player2[@]} -gt 0 ]; then
+			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"	
+		fi
+		eval $joycommand
+
+		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
+		sleep 0.5
+		map_joystick_indexes		
+		sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/all/retroarch.cfg
+		sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
+		if [ ${#player2[@]} -gt 0 ]; then
+			sed -i "s/input_player2_joypad_index\s*\=\s*.*/input_player2_joypad_index = ${player2['jsindex']}/g" /opt/retropie/configs/all/retroarch.cfg
+			sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
+		fi		
 	;;
 
 	fba)
@@ -189,6 +205,7 @@ case $1 in
 				eval $joycommand
 			;;
 		esac
+
 		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
 		sleep 0.5
 		map_joystick_indexes		
