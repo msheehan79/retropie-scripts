@@ -10,9 +10,16 @@ if [[ -n "$emucall" ]]; then
     pkill -P "$emupid"
     kill "$emupid"
     wait "$emupid"
-    sleep 2
+    sleep 5
 fi
 
-kill "$espid"
-wait "$espid"
-sleep 2
+killall emulationstation
+COUNTER=0
+while [ $COUNTER lt 60 ]; do
+  if [ ! "$(pgrep -f "emulationstation" )" ]
+  then
+    break
+  fi
+  let COUNTER=COUNTER+1
+  sleep 1
+done
