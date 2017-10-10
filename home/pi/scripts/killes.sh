@@ -13,13 +13,13 @@ if [[ -n "$emucall" ]]; then
     sleep 5
 fi
 
-killall emulationstation
-COUNTER=0
-while [ $COUNTER lt 60 ]; do
-  if [ ! "$(pgrep -f "emulationstation" )" ]
-  then
-    break
-  fi
-  let COUNTER=COUNTER+1
-  sleep 1
-done
+killall -w emulationstation
+#COUNTER=0
+#while [ $COUNTER lt 60 ]; do
+#  if [ ! "$(pgrep -f "emulationstation" )" ]
+#  then
+#    break
+#  fi
+#  let COUNTER=COUNTER+1
+#  sleep 1
+#done
