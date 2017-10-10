@@ -98,5 +98,7 @@ invert="--ui-buttonmap du=KEY_DOWN,dd=KEY_UP"
 
 dpadasbutton="--dpad-as-button"
 
+invertrightanalog="--axismap -X2=X2"
+
 ### Kill Command
 xboxkill="sudo killall > /dev/null 2>&1 xboxdrv"

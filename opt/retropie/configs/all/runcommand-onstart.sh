@@ -147,6 +147,13 @@ case $1 in
 	;;
 	
 	n64)
+		$xboxkill
+		joycommand="$basicConfig ${player1['id']} ${player1['map']} $invertrightanalog &"
+		if [ ${#player2[@]} -gt 0 ]; then
+			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $invertrightanalog &"	
+		fi
+		#echo $joycommand >> /dev/shm/runcommand.log
+		eval $joycommand		
 	;;
 
 	# RetroArch emulators
