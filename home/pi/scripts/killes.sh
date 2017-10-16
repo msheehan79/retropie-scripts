@@ -3,11 +3,11 @@
 # Check if EmulationStation is running. Exit if it isn't.
 espid="$(pgrep -f "/opt/retropie/supplementary/.*/emulationstation([^.]|$)")" || exit 0
 
-emucall="$(sed -n 4p /dev/shm/runcommand.info | tr -d '\\"' | tr '^$[]*.()|+?{}' '.')"
+emucall="$(sed '4!d; s/\([\\"]\|[[:alnum:]_]\+=[^ ]* \)//g; s/[][(){}^$*.|+? ]/\\&/g' /dev/shm/runcommand.info)"
 # If there is an emulator running, we need to kill it and go back to ES
 if [[ -n "$emucall" ]]; then
-    emupid="$(pgrep -f "$emucall")"
-    pkill -P "$emupid"
+    emupid="$(pgrep -f "$emucall" | tr '\n' ' ')"
+    pkill -P "$(echo $emupid | tr ' ' ',')"
     kill "$emupid"
     wait "$emupid"
     sleep 5
