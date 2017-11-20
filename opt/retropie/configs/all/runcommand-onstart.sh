@@ -180,13 +180,28 @@ case $1 in
 	arcade)
         case $2 in
 			"lr-mame2003"|"lr-mame2010"|"lr-fbalpha")
-				$xboxkill
-				joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
-				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"	
-				fi
-				eval $joycommand
-
+				case $rom in # Configuration used only for these ROMs - four way joystick
+					"alibaba.zip"|"amidar.zip"|"anteater.zip"|"atetris.zip"|"armorcar.zip"|"armwrest.zip"|"bagman.zip"|"btime.zip"|"digdug.zip"|"digdug2.zip"|\
+					"digger.zip"|"dkong.zip"|"dkong3.zip"|"dkongjr.zip"|"drgnbstr.zip"|"elevator.zip"|"galaga.zip"|"galaxian.zip"|"headon.zip"|"invaders.zip"|\
+					"jrpacman.zip"|"lnc.zip"|"locomotn.zip"|"mspacman.zip"|"mrdo.zip"|"mrflea.zip"|"mrgoemon.zip"|"nrallyx.zip"|"pacman.zip"|"pacplus.zip"|\
+					"pengo.zip"|"pepper2.zip"|"popeye.zip"|"puckman.zip"|"qbert.zip"|"qbertqub.zip"|"rallyx.zip"|"rampage.zip"|"tapper.zip"|"todruaga.zip")
+					$xboxkill
+					joycommand="$basicConfig ${player1['id']} ${player1['map']} $fourway &"
+					if [ ${#player2[@]} -gt 0 ]; then
+						joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $fourway &"
+					fi
+					eval $joycommand
+				;;
+				*) # Configuration for every other ROMs on this emulator
+					$xboxkill
+					joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
+					if [ ${#player2[@]} -gt 0 ]; then
+						joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
+					fi
+					eval $joycommand
+				;;
+				esac
+				
 				# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
 				sleep 0.5
 				map_joystick_indexes
