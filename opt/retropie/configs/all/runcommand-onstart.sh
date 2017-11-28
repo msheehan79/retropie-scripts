@@ -181,8 +181,8 @@ case $1 in
         case $2 in
 			"lr-mame2003"|"lr-mame2010"|"lr-fbalpha")
 				case $rom in # Configuration used only for these ROMs - four way joystick
-					"alibaba.zip"|"amidar.zip"|"anteater.zip"|"atetris.zip"|"armorcar.zip"|"armwrest.zip"|"bagman.zip"|"btime.zip"|"digdug.zip"|"digdug2.zip"|\
-					"digger.zip"|"dkong.zip"|"dkong3.zip"|"dkongjr.zip"|"drgnbstr.zip"|"elevator.zip"|"galaga.zip"|"galaxian.zip"|"headon.zip"|"invaders.zip"|\
+					"alibaba.zip"|"amidar.zip"|"anteater.zip"|"atetris.zip"|"armorcar.zip"|"armwrest.zip"|"bagman.zip"|"bombrman.zip"|"btimem.zip"|"digdug.zip"|"digdug2.zip"|\
+					"digger.zip"|"dkong.zip"|"dkong3.zip"|"dkongjr.zip"|"drgnbstr.zip"|"eeekk.zip"|"elevator.zip"|"galaga.zip"|"galaxian.zip"|"headon.zip"|"invaders.zip"|\
 					"jrpacman.zip"|"lnc.zip"|"locomotn.zip"|"mspacman.zip"|"mrdo.zip"|"mrflea.zip"|"mrgoemon.zip"|"nrallyx.zip"|"pacman.zip"|"pacplus.zip"|\
 					"pengo.zip"|"pepper2.zip"|"popeye.zip"|"puckman.zip"|"qbert.zip"|"qbertqub.zip"|"rallyx.zip"|"rampage.zip"|"tapper.zip"|"todruaga.zip")
 					$xboxkill
