@@ -181,10 +181,16 @@ case $1 in
         case $2 in
 			"lr-mame2003"|"lr-mame2010"|"lr-fbalpha")
 				case $rom in # Configuration used only for these ROMs - four way joystick
-					"alibaba.zip"|"amidar.zip"|"anteater.zip"|"atetris.zip"|"armorcar.zip"|"armwrest.zip"|"bagman.zip"|"bombrman.zip"|"btimem.zip"|"digdug.zip"|"digdug2.zip"|\
-					"digger.zip"|"dkong.zip"|"dkong3.zip"|"dkongjr.zip"|"drgnbstr.zip"|"eeekk.zip"|"elevator.zip"|"galaga.zip"|"galaxian.zip"|"headon.zip"|"invaders.zip"|\
-					"jrpacman.zip"|"lnc.zip"|"locomotn.zip"|"mspacman.zip"|"mrdo.zip"|"mrflea.zip"|"mrgoemon.zip"|"nrallyx.zip"|"pacman.zip"|"pacplus.zip"|\
-					"pengo.zip"|"pepper2.zip"|"popeye.zip"|"puckman.zip"|"qbert.zip"|"qbertqub.zip"|"rallyx.zip"|"rampage.zip"|"tapper.zip"|"todruaga.zip")
+					"005.zip"|"alibaba.zip"|"amidar.zip"|"anteater.zip"|"atetris.zip"|"armorcar.zip"|"armwrest.zip"|"bagman.zip"|"ballbros.zip"|"barricad.zip"|\
+					"bbonk.zip"|"bnj.zip"|"bogeyman.zip"|"bombrman.zip"|"bouldash.zip"|"brubber.zip"|"btimem.zip"|"cavelon.zip"|"checkman.zip"|"columns.zip"|"comotion.zip"|\
+					"congo.zip"|"crash.zip"|"ckong.zip"|"crush.zip"|"devilfsh.zip"|"digdug.zip"|"digdug2.zip"|"digger.zip"|"docastle.zip"|"dorunrun.zip"|"domino.zip"|"dominos.zip"|\
+					"dkong.zip"|"dkong3.zip"|"dkongjr.zip"|"drgnbstr.zip"|"eeekk.zip"|"elevator.zip"|"frogger.zip"|"galaga.zip"|"galaxian.zip"|"galpanic.zip"|"glfgreat.zip"|\
+					"headon.zip"|"hustle.zip"|"invaders.zip"|"jrpacman.zip"|"jungler.zip"|"kicker.zip"|"klax.zip"|"kungfum.zip"|"ladybug.zip"|"ldrun.zip"|"lnc.zip"|"locomotn.zip"|\
+					"lupin3.zip"|"maze.zip"|"monsterb.zip"|"mspacman.zip"|"mrdo.zip"|"mrflea.zip"|"mrgoemon.zip"|"mtrap.zip"|"natodef.zip"|"naughtyb.zip"|"nibbler.zip"|"nrallyx.zip"|\
+					"olibochu.zip"|"pacman.zip"|"pacmania.zip"|"pacplus.zip"|"pandoras.zip"|"pengo.zip"|"pepper2.zip"|"pitfall2.zip"|"ponpoko.zip"|"popeye.zip"|"puckman.zip"|"pulsar.zip"|\
+					"punchout.zip"|"qbert.zip"|"qbertqub.zip"|"rallyx.zip"|"rampage.zip"|"rbtapper.zip"|"robby.zip"|"roundup.zip"|"rthunder.zip"|"sbagman.zip"|"sharkatt.zip"|"sidetrac.zip"|\
+					"spacezap.zip"|"spectar.zip"|"spnchout.zip"|"sqix.zip"|"superpac.zip"|"tankbatt.zip"|"tapper.zip"|"targ.zip"|"tazmania.zip"|"tetris.zip"|"tetrisp.zip"|"thepit.zip"|"thief.zip"|\
+					"timber.zip"|"todruaga.zip"|"tomahawk.zip"|"toypop.zip"|"tranqgun.zip"|"upndown.zip"|"warpwarp.zip"|"wbml.zip"|"wow.zip"|"zerozone.zip"|"zigzag.zip"|"zoar.zip"|"zookeep.zip")
 					$xboxkill
 					joycommand="$basicConfig ${player1['id']} ${player1['map']} $fourway &"
 					if [ ${#player2[@]} -gt 0 ]; then
