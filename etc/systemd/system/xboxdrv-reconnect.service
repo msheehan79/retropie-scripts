@@ -1,0 +1,9 @@
+# xboxdrv reconnect service, runs the xboxdrv script on device reconnect
+# file: /etc/systemd/system/xboxdrv-reconnect.service
+#
+[Unit]
+Description=Start xboxdrv service
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/pi/scripts/xboxdrv.sh
