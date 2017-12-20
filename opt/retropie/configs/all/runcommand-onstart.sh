@@ -56,6 +56,7 @@ case $1 in
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200p2 $fourway &"
 					sed -i "s/SDL_JOY_1_INDEX=.*/SDL_JOY_1_INDEX=${player2['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 			"Robotron 2084 (USA).a52"|"Space Dungeon (USA).a52")
@@ -66,6 +67,7 @@ case $1 in
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200_dualsticks &"
 					sed -i "s/SDL_JOY_1_INDEX=.*/SDL_JOY_1_INDEX=${player2['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 			"Centipede (USA).a52"|"Gorf (USA).a52"|"Kaboom! (USA).a52"|"Missile Command (USA).a52"|\
@@ -77,6 +79,7 @@ case $1 in
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200_mouse &"
 					sed -i "s/SDL_JOY_1_INDEX=.*/SDL_JOY_1_INDEX=${player2['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				fi				
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 			*) # Configuration for every other ROMs on this emulator
@@ -87,7 +90,7 @@ case $1 in
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200p2 &"
 					sed -i "s/SDL_JOY_1_INDEX=.*/SDL_JOY_1_INDEX=${player2['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				fi
-				#echo $joycommand >> /dev/shm/runcommand.log
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 		esac
@@ -101,6 +104,7 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivisionp2_armorbattle &"
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 			"Beauty and the Beast (World).int"|"BurgerTime (World).int"|"Congo Bongo (World).int"|"Dig Dug (World).int"|\
@@ -111,6 +115,7 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivisionp2 $fourway &"
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 			*) # Configuration for every other ROMs on this emulator
@@ -119,7 +124,7 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivisionp2 &"
 				fi
-				#echo $joycommand >> /dev/shm/runcommand.log
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 		esac
@@ -133,7 +138,8 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
 				fi
-				eval $joycommand		
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
 			;;
 			*)
 				$xboxkill
@@ -141,6 +147,7 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 		esac
@@ -152,7 +159,7 @@ case $1 in
 		if [ ${#player2[@]} -gt 0 ]; then
 			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $invertrightanalog &"	
 		fi
-		#echo $joycommand >> /dev/shm/runcommand.log
+		echo $joycommand >> /dev/shm/runcommand.info
 		eval $joycommand		
 	;;
 
@@ -164,7 +171,7 @@ case $1 in
 			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"	
 		fi
 
-		#echo $joycommand >> /dev/shm/runcommand.log
+		echo $joycommand >> /dev/shm/runcommand.info
 		eval $joycommand
 		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
 		sleep 0.5
@@ -196,6 +203,7 @@ case $1 in
 					if [ ${#player2[@]} -gt 0 ]; then
 						joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $fourway &"
 					fi
+					echo $joycommand >> /dev/shm/runcommand.info
 					eval $joycommand
 				;;
 				*) # Configuration for every other ROMs on this emulator
@@ -204,6 +212,7 @@ case $1 in
 					if [ ${#player2[@]} -gt 0 ]; then
 						joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
 					fi
+					echo $joycommand >> /dev/shm/runcommand.info
 					eval $joycommand
 				;;
 				esac
@@ -229,6 +238,7 @@ case $1 in
 		if [ ${#player2[@]} -gt 0 ]; then
 			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"	
 		fi
+		echo $joycommand >> /dev/shm/runcommand.info
 		eval $joycommand
 
 		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
@@ -250,6 +260,7 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $fourway &"
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 			*) # Configuration for every other ROMs on this emulator
@@ -258,6 +269,7 @@ case $1 in
 				if [ ${#player2[@]} -gt 0 ]; then
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
 				fi
+				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
 		esac
