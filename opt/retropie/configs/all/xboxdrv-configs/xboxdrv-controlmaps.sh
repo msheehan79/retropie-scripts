@@ -123,4 +123,5 @@ dpadasbutton="--dpad-as-button"
 invertrightanalog="--axismap -X2=X2"
 
 ### Kill Command. To ensure no orphan processes left hanging around send a -9 request after the normal shutdown to clean up.
-xboxkill="sudo killall > /dev/null 2>&1 xboxdrv; sudo killall -9 > /dev/null 2>&1 xboxdrv"
+xboxkill="sudo killall > /dev/null 2>&1 xboxdrv"
+#xboxkill="sudo killall > /dev/null 2>&1 xboxdrv; sudo killall -9 > /dev/null 2>&1 xboxdrv"
