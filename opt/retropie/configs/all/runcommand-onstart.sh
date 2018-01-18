@@ -186,7 +186,7 @@ case $1 in
 
 	arcade)
         case $2 in
-			"lr-mame2003"|"lr-mame2010"|"lr-fbalpha")
+			"lr-mame2003"|"lr-mame2003-plus"|"lr-mame2010"|"lr-fbalpha")
 				case $rom in # Configuration used only for these ROMs - four way joystick
 					"005.zip"|"alibaba.zip"|"amidar.zip"|"anteater.zip"|"atetris.zip"|"armorcar.zip"|"armwrest.zip"|"bagman.zip"|"ballbros.zip"|"barricad.zip"|\
 					"bbonk.zip"|"bnj.zip"|"bogeyman.zip"|"bombrman.zip"|"bouldash.zip"|"brubber.zip"|"btimem.zip"|"cavelon.zip"|"checkman.zip"|"columns.zip"|"comotion.zip"|\
