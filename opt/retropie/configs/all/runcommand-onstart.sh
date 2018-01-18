@@ -227,11 +227,20 @@ case $1 in
 					sed -i "s/input_player2_joypad_index\s*\=\s*.*/input_player2_joypad_index = ${player2['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
 				fi
 			;;
-			*)			
+			"advmame")
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_p1 &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $advmame_p2 &"
+				fi
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
+			;;
+			*)
 			;;
 		esac
 	;;
-	
+
 	mame-libretro)
 		$xboxkill
 		joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
@@ -250,6 +259,32 @@ case $1 in
 			sed -i "s/input_player2_joypad_index\s*\=\s*.*/input_player2_joypad_index = ${player2['jsindex']}/g" /opt/retropie/configs/all/retroarch.cfg
 			sed -i "s/input_player2_joypad_index\s*\=\s*.*/input_player2_joypad_index = ${player2['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
 		fi
+	;;
+
+	mame-advmame)
+		case $rom in
+			"bwidow.zip")
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_bwidow &"
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
+			;;		
+			"bzone.zip")
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_bzone &"
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
+			;;
+			*)
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_p1 &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $advmame_p2 &"
+				fi
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
+			;;
+		esac
 	;;
 
 	fba)

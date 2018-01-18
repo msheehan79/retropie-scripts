@@ -32,6 +32,28 @@ amiga_1943="--ui-axismap Y1=KEY_UP:KEY_DOWN,X1=KEY_LEFT:KEY_RIGHT \
 	--ui-buttonmap back+x=KEY_F12,back+start=KEY_F9,tl=void,lt=void,rt=void,back=void,y=KEY_ENTER
 	--ui-buttonmap a=KEY_PAGEDOWN,b=KEY_END,du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT,start=KEY_P"	
 
+advmame_p1="--ui-axismap X1=KEY_LEFT:KEY_RIGHT,Y1=KEY_UP:KEY_DOWN \
+    --ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT \
+	--ui-buttonmap lb=void,tl=void,tr=void,guide=void,lt=void,rt=void \
+	--ui-buttonmap x=KEY_LEFTCTRL,a=KEY_LEFTALT,y=KEY_SPACE,b=KEY_LEFTSHIFT,back=KEY_5,start=KEY_1,back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,rb=KEY_ENTER"
+
+advmame_p2="--ui-axismap X1=KEY_D:KEY_G,Y1=KEY_R:KEY_F \
+	--ui-buttonmap du=KEY_R,dd=KEY_F,dl=KEY_D,dr=KEY_G \
+	--ui-buttonmap lb=void,rb=void,tl=void,tr=void,guide=void,lt=void,rt=void \
+	--ui-buttonmap x=KEY_A,a=KEY_S,y=KEY_Q,b=KEY_W,back=KEY_6,start=KEY_2,back+start=KEY_SPACE+KEY_ESC"
+
+advmame_bwidow="--ui-axismap X1=KEY_S:KEY_F,Y1=KEY_E:KEY_D \
+	--ui-axismap X2=KEY_J:KEY_L,Y2=KEY_I:KEY_K \
+    --ui-buttonmap du=KEY_E,dd=KEY_D,dl=KEY_S,dr=KEY_F \
+	--ui-buttonmap lb=void,tl=void,tr=void,guide=void,lt=void,rt=void \
+	--ui-buttonmap x=KEY_S,a=KEY_K,y=KEY_I,b=KEY_L,back=KEY_5,start=KEY_1,back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,rb=KEY_ENTER"
+
+advmame_bzone="--ui-axismap X1=KEY_LEFT:KEY_RIGHT,Y1=KEY_E:KEY_D \
+	--ui-axismap Y2=KEY_I:KEY_K \
+    --ui-buttonmap du=KEY_E,dd=KEY_D,dl=KEY_LEFT,dr=KEY_RIGHT \
+	--ui-buttonmap lb=void,tl=void,tr=void,guide=void \
+	--ui-buttonmap x=KEY_SPACE,a=KEY_SPACE,y=KEY_SPACE,b=KEY_SPACE,lt=KEY_SPACE,rt=KEY_SPACE,back=KEY_5,start=KEY_1,back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,rb=KEY_ENTER"
+	
 atari5200="--ui-axismap X1=KEY_KP4:KEY_KP6,Y1=KEY_KP8:KEY_KP5 \
 	--ui-axismap Y2=KEY_2:KEY_8,X2=KEY_4:KEY_6,lt+Y2=KEY_1:KEY_7,rt+Y2=KEY_3:KEY_9 \
 	--ui-buttonmap tr=KEY_5,b=KEY_EQUAL,y=KEY_KPASTERISK,lb=KEY_0 \
