@@ -40,7 +40,7 @@ atari5200="--ui-axismap X1=KEY_KP4:KEY_KP6,Y1=KEY_KP8:KEY_KP5 \
 	--ui-axismap lt+X1=KEY_LEFT:KEY_RIGHT,lt+Y1=KEY_UP:KEY_DOWN \
 	--ui-buttonmap guide=void,tl=void,rb=void"
 	
-atari5200p2="--ui-axismap X1=KEY_A:KEY_D,Y1=KEY_W:KEY_S \
+atari5200_p2="--ui-axismap X1=KEY_A:KEY_D,Y1=KEY_W:KEY_S \
 	--ui-axismap Y2=KEY_2:KEY_8,X2=KEY_4:KEY_6,lt+Y2=KEY_1:KEY_7,rt+Y2=KEY_3:KEY_9 \
 	--ui-buttonmap tr=KEY_5,b=KEY_EQUAL,y=KEY_KPASTERISK,lb=KEY_0 \
 	--ui-buttonmap a=KEY_LEFTCTRL,x=KEY_RIGHTSHIFT,back+start=KEY_F9,lt+start=KEY_F5,du=KEY_W,dd=KEY_S,dl=KEY_A,dr=KEY_D,start=KEY_F4,back=KEY_F3,lt=KEY_HOME,rt=KEY_HOME,tl=KEY_HOME \
@@ -75,7 +75,7 @@ intellivision="--ui-axismap X1=KEY_S:KEY_D,Y1=KEY_E:KEY_X \
 	--ui-buttonmap back=cycle-key:KEY_F6:KEY_F5 \
 	--ui-buttonmap guide=KEY_ENTER"
 	
-intellivisionp2="--ui-axismap X1=KEY_J:KEY_K,Y1=KEY_I:KEY_M \
+intellivision_p2="--ui-axismap X1=KEY_J:KEY_K,Y1=KEY_I:KEY_M \
 	--ui-axismap Y2=KEY_KP2:KEY_KP8,X2=KEY_KP4:KEY_KP6,lt+Y2=KEY_KP1:KEY_KP7,rt+Y2=KEY_KP3:KEY_KP9 \
 	--ui-buttonmap tr=KEY_KP5,b=KEY_ENTER,rb=KEY_KP0,lb=KEY_DOT \
 	--ui-buttonmap a=KEY_RIGHTSHIFT,x=KEY_RIGHTCTRL,y=KEY_RIGHTALT,lt+back=KEY_F12,back+start=KEY_F1,lt=KEY_HOME,rt=KEY_HOME,tl=KEY_HOME,du=KEY_I,dd=KEY_M,dl=KEY_J,dr=KEY_K,back=KEY_HOME,start=KEY_PAUSE \

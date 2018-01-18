@@ -53,7 +53,7 @@ case $1 in
 				joycommand="$basicConfig ${player1['id']} ${player1['map']} $atari5200 $fourway &"
 				sed -i "s/SDL_JOY_0_INDEX=.*/SDL_JOY_0_INDEX=${player1['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200p2 $fourway &"
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200_p2 $fourway &"
 					sed -i "s/SDL_JOY_1_INDEX=.*/SDL_JOY_1_INDEX=${player2['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				fi
 				echo $joycommand >> /dev/shm/runcommand.info
@@ -87,7 +87,7 @@ case $1 in
 				joycommand="$basicConfig ${player1['id']} ${player1['map']} $atari5200 &"
 				sed -i "s/SDL_JOY_0_INDEX=.*/SDL_JOY_0_INDEX=${player1['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200p2 &"
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $atari5200_p2 &"
 					sed -i "s/SDL_JOY_1_INDEX=.*/SDL_JOY_1_INDEX=${player2['jsid']}/g" /opt/retropie/configs/atari800/atari800.cfg
 				fi
 				echo $joycommand >> /dev/shm/runcommand.info
@@ -113,7 +113,7 @@ case $1 in
 				$xboxkill
 				joycommand="$basicConfig ${player1['id']} ${player1['map']} $intellivision $fourway &"
 				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivisionp2 $fourway &"
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivision_p2 $fourway &"
 				fi
 				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
@@ -122,7 +122,7 @@ case $1 in
 				$xboxkill
 				joycommand="$basicConfig ${player1['id']} ${player1['map']} $intellivision &"
 				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivisionp2 &"
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivision_p2 &"
 				fi
 				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
