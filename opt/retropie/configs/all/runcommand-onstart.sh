@@ -164,7 +164,7 @@ case $1 in
 	;;
 
 	# RetroArch emulators
-	atari7800|fds|gamegear|gb|gbc|gba|mastersystem|megadrive|msx|msx2|neogeo|nes|pcengine|pcenginecd|pcfx|psx|sega32x|segacd|sgfx|snes|virtualboy|x68000)
+	atari7800|fds|gamegear|gb|gbc|gba|mastersystem|megadrive|msx|msx2|neogeo|nes|pcengine|pcenginecd|pcfx|psx|sega32x|segacd|sgfx|snes|vectrex|virtualboy|x68000)
 		$xboxkill
 		joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
 		if [ ${#player2[@]} -gt 0 ]; then
