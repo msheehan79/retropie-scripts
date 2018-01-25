@@ -198,23 +198,23 @@ case $1 in
 					"punchout.zip"|"qbert.zip"|"qbertqub.zip"|"rallyx.zip"|"rampage.zip"|"rbtapper.zip"|"robby.zip"|"roundup.zip"|"rthunder.zip"|"sbagman.zip"|"sharkatt.zip"|"sidetrac.zip"|\
 					"spacezap.zip"|"spectar.zip"|"spnchout.zip"|"sqix.zip"|"superpac.zip"|"tankbatt.zip"|"tapper.zip"|"targ.zip"|"tazmania.zip"|"tetris.zip"|"tetrisp.zip"|"thepit.zip"|"thief.zip"|\
 					"timber.zip"|"todruaga.zip"|"tomahawk.zip"|"toypop.zip"|"tranqgun.zip"|"upndown.zip"|"warpwarp.zip"|"wbml.zip"|"wow.zip"|"zerozone.zip"|"zigzag.zip"|"zoar.zip"|"zookeep.zip")
-					$xboxkill
-					joycommand="$basicConfig ${player1['id']} ${player1['map']} $fourway &"
-					if [ ${#player2[@]} -gt 0 ]; then
-						joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $fourway &"
-					fi
-					echo $joycommand >> /dev/shm/runcommand.info
-					eval $joycommand
-				;;
-				*) # Configuration for every other ROMs on this emulator
-					$xboxkill
-					joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
-					if [ ${#player2[@]} -gt 0 ]; then
-						joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
-					fi
-					echo $joycommand >> /dev/shm/runcommand.info
-					eval $joycommand
-				;;
+						$xboxkill
+						joycommand="$basicConfig ${player1['id']} ${player1['map']} $fourway &"
+						if [ ${#player2[@]} -gt 0 ]; then
+							joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $fourway &"
+						fi
+						echo $joycommand >> /dev/shm/runcommand.info
+						eval $joycommand
+					;;
+					*) # Configuration for every other ROMs on this emulator
+						$xboxkill
+						joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
+						if [ ${#player2[@]} -gt 0 ]; then
+							joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
+						fi
+						echo $joycommand >> /dev/shm/runcommand.info
+						eval $joycommand
+					;;
 				esac
 				
 				# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
