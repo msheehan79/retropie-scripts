@@ -32,6 +32,12 @@ amiga_1943="--ui-axismap Y1=KEY_UP:KEY_DOWN,X1=KEY_LEFT:KEY_RIGHT \
 	--ui-buttonmap back+x=KEY_F12,back+start=KEY_F9,tl=void,lt=void,rt=void,back=void,y=KEY_ENTER
 	--ui-buttonmap a=KEY_PAGEDOWN,b=KEY_END,du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT,start=KEY_P"	
 
+advmame_tinstar="--ui-axismap X1=KEY_J:KEY_L,Y1=KEY_I:KEY_K \
+    --ui-axismap X2=KEY_S:KEY_F,Y2=KEY_E:KEY_D \
+    --ui-buttonmap du=KEY_I,dd=KEY_K,dl=KEY_J,dr=KEY_L \
+	--ui-buttonmap lb=void,tl=void,tr=void,guide=void,y=void,b=void \
+	--ui-buttonmap x=KEY_LEFTCTRL,a=KEY_LEFTALT,rt=KEY_LEFTCTRL,lt=KEY_LEFTALT,back=KEY_5,start=KEY_1,back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,rb=KEY_ENTER"
+	
 advmame_p1="--ui-axismap X1=KEY_LEFT:KEY_RIGHT,Y1=KEY_UP:KEY_DOWN \
     --ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT \
 	--ui-buttonmap lb=void,tl=void,tr=void,guide=void,lt=void,rt=void \
