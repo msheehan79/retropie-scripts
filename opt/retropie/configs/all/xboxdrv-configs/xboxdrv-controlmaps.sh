@@ -37,6 +37,20 @@ advmame_tinstar="--ui-axismap X1=KEY_J:KEY_L,Y1=KEY_I:KEY_K \
     --ui-buttonmap du=KEY_I,dd=KEY_K,dl=KEY_J,dr=KEY_L \
 	--ui-buttonmap lb=void,tl=void,tr=void,guide=void,y=void,b=void \
 	--ui-buttonmap x=KEY_LEFTCTRL,a=KEY_LEFTALT,rt=KEY_LEFTCTRL,lt=KEY_LEFTALT,back=KEY_5,start=KEY_1,back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,rb=KEY_ENTER"
+
+advmame_tron="--ui-axismap X1=KEY_LEFT:KEY_RIGHT,Y1=KEY_UP:KEY_DOWN \
+	--ui-axismap X2=KEY_Z:KEY_X \
+	--ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT \
+	--ui-buttonmap tl=void,tr=void,guide=void,lt=void \
+	--ui-buttonmap x=KEY_LEFTCTRL,a=KEY_LEFTALT,y=KEY_SPACE,b=KEY_LEFTSHIFT,back=KEY_5,start=KEY_1 \
+	--ui-buttonmap back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,back+rb=KEY_ENTER,rb=KEY_X,lb=KEY_Z,rt=KEY_LEFTCTRL"
+
+advmame_tron_p2="--ui-axismap X1=KEY_D:KEY_G,Y1=KEY_R:KEY_F \
+	--ui-axismap X2=KEY_C:KEY_V \
+	--ui-buttonmap du=KEY_R,dd=KEY_F,dl=KEY_D,dr=KEY_G \
+	--ui-buttonmap lb=void,rb=void,tl=void,tr=void,guide=void,lt=void,rt=void \
+	--ui-buttonmap x=KEY_A,a=KEY_S,y=KEY_Q,b=KEY_W,back=KEY_6,start=KEY_2 \
+	--ui-buttonmap back+start=KEY_SPACE+KEY_ESC,back+y=KEY_TAB,back+rb=KEY_ENTER,rb=KEY_V,lb=KEY_C,rt=KEY_A"	
 	
 advmame_p1="--ui-axismap X1=KEY_LEFT:KEY_RIGHT,Y1=KEY_UP:KEY_DOWN \
     --ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT \

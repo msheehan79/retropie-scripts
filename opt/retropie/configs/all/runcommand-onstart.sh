@@ -248,8 +248,17 @@ case $1 in
 							joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $advmame_tinstar &"
 						fi
 						echo $joycommand >> /dev/shm/runcommand.info
-						eval $joycommand					
-					;;					
+						eval $joycommand
+					;;
+					"tron.zip"|"dotron.zip")
+						$xboxkill
+						joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_tron &"
+						if [ ${#player2[@]} -gt 0 ]; then
+							joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $advmame_tron_p2 &"
+						fi
+						echo $joycommand >> /dev/shm/runcommand.info
+						eval $joycommand
+					;;
 					*)
 						$xboxkill
 						joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_p1 &"
@@ -305,8 +314,17 @@ case $1 in
 					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $advmame_tinstar &"
 				fi
 				echo $joycommand >> /dev/shm/runcommand.info
-				eval $joycommand					
-			;;			
+				eval $joycommand
+			;;
+			"tron.zip"|"dotron.zip")
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_tron &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $advmame_tron_p2 &"
+				fi
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
+			;;
 			*)
 				$xboxkill
 				joycommand="$basicConfig ${player1['id']} ${player1['map']} $advmame_p1 &"
