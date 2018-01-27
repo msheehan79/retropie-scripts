@@ -227,7 +227,7 @@ case $1 in
 					sed -i "s/input_player2_joypad_index\s*\=\s*.*/input_player2_joypad_index = ${player2['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
 				fi
 			;;
-			"advmame")
+			"advmame"|"advmame-1.4"|"advmame-0.94")
 				case $rom in # Configuration used only for these ROMs
 					"bwidow.zip")
 						$xboxkill
