@@ -361,7 +361,7 @@ case $1 in
 
 		# Need to put a delay to allow xboxdrv to get set up before we can poll for the SDL IDs to map those
 		sleep 0.5
-		map_joystick_indexes		
+		map_joystick_indexes	
 		sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/all/retroarch.cfg
 		sed -i "s/input_player1_joypad_index\s*\=\s*.*/input_player1_joypad_index = ${player1['jsindex']}/g" /opt/retropie/configs/$1/retroarch.cfg
 		if [ ${#player2[@]} -gt 0 ]; then
