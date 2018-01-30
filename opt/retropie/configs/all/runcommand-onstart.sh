@@ -160,7 +160,14 @@ case $1 in
 			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $invertrightanalog &"	
 		fi
 		echo $joycommand >> /dev/shm/runcommand.info
-		eval $joycommand		
+		eval $joycommand
+	;;
+
+	nds)
+		$xboxkill
+		joycommand="$basicConfig ${player1['id']} ${player1['map']} $nds &"
+		echo $joycommand >> /dev/shm/runcommand.info
+		eval $joycommand
 	;;
 
 	# RetroArch emulators

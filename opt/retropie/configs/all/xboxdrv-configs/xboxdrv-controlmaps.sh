@@ -133,7 +133,17 @@ intellivisionp2_armorbattle="--ui-axismap X1=KEY_J:KEY_K,Y1=KEY_I:KEY_M \
 	--ui-axismap Y2=KEY_KP1:KEY_KP2,X2=KEY_KP3:KEY_KP4,lt+Y2=KEY_KP5:KEY_KP6,lt+X2=KEY_KP7:KEY_KP8,rt+Y2=KEY_KP9:KEY_DOT,rt+X2=KEY_0:KEY_ENTER \
 	--ui-buttonmap a=KEY_RIGHTSHIFT,b=KEY_RIGHTCTRL,x=KEY_RIGHTCTRL,y=KEY_RIGHTALT,lt+back=KEY_F12,back+start=KEY_F1,lt=KEY_HOME,rt=KEY_RIGHTSHIFT,tl=KEY_HOME,tr=KEY_HOME,du=KEY_I,dd=KEY_M,dl=KEY_J,dr=KEY_K,back=KEY_HOME,start=KEY_PAUSE \
 	--ui-buttonmap guide=KEY_ENTER,lb=void,rb=void"
-	
+
+nds="--buttonmap tl^toggle=tl \
+	--ui-axismap x1=REL_X:10,y1=REL_Y:10,tl+x1=KEY_LEFT:KEY_RIGHT,tl+y1=KEY_UP:KEY_DOWN \
+	--ui-axismap x2=REL_X:10,y2=REL_Y:10 \
+	--ui-buttonmap tr=BTN_RIGHT \
+	--ui-buttonmap du=KEY_UP,dd=KEY_DOWN,dl=KEY_LEFT,dr=KEY_RIGHT \
+	--ui-buttonmap a=KEY_LEFTCTRL,b=KEY_SPACE,x=KEY_X,y=KEY_Z,lt=KEY_LEFTSHIFT,rt=KEY_C,start=KEY_ENTER,back=KEY_RIGHTSHIFT \
+	--ui-buttonmap back+lb=KEY_F7,back+rb=KEY_F5,back+start=KEY_F12,back+x=KEY_S,back+b=KEY_A,back+a=KEY_D \
+	--ui-buttonmap back+y=cycle-key:KEY_M:KEY_ESC \
+	--ui-buttonmap guide=void"
+
 fourway="--four-way-restrictor"
 
 invert="--ui-buttonmap du=KEY_DOWN,dd=KEY_UP"
