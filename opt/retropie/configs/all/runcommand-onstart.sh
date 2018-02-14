@@ -131,38 +131,13 @@ case $1 in
 	;;
 
 	amiga)
-		case $rom in
-			"1943.uae")
-				$xboxkill
-				joycommand="$basicConfig ${player1['id']} ${player1['map']} $amiga_1943 &"
-				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
-				fi
-				echo $joycommand >> /dev/shm/runcommand.info
-				eval $joycommand
-			;;
-			*)
-				$xboxkill
-				joycommand="$basicConfig ${player1['id']} ${player1['map']} $amiga &"
-				if [ ${#player2[@]} -gt 0 ]; then
-					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $amiga &"	
-				fi
-				echo $joycommand >> /dev/shm/runcommand.info
-				eval $joycommand
-			;;
-		esac
-	;;
-	
-	n64)
 		$xboxkill
-		joycommand="$basicConfig ${player1['id']} ${player1['map']} $invertrightanalog &"
-		if [ ${#player2[@]} -gt 0 ]; then
-			joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $invertrightanalog &"	
-		fi
-		echo $joycommand >> /dev/shm/runcommand.info
-		eval $joycommand
 	;;
 
+	n64)
+		$xboxkill
+	;;
+	
 	nds)
 		$xboxkill
 		joycommand="$basicConfig ${player1['id']} ${player1['map']} $nds &"
