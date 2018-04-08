@@ -31,7 +31,7 @@ read_config $configfile
 # Assign controller information such as device name, mapping and SDL index
 assign_controllers
 
-if [ ${#player1[@]} == 0 ]; then
+if [ ${#player1[@]} -eq 0 ]; then
 	echo "No controllers found!"
 	exit 0
 fi
@@ -40,9 +40,9 @@ fi
 source '/opt/retropie/configs/all/xboxdrv-configs/xboxdrv-controlmaps.sh'
 
 joycommand="$basicConfig ${player1['id']} ${player1['map']} &"
-if [ ${#player2[@]} > 0 ]; then
+if [ ${#player2[@]} -gt 0 ]; then
 	joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} &"
 fi
-echo $joycommand >> /dev/shm/rclocal.log
+#echo $joycommand >> /dev/shm/rclocal.log
 eval $joycommand
 exit 0
