@@ -45,4 +45,7 @@ if [ ${#player2[@]} -gt 0 ]; then
 fi
 #echo $joycommand >> /dev/shm/rclocal.log
 eval $joycommand
+
+# Start background music script
+sudo python /home/pi/scripts/bg-music.py &
 exit 0
