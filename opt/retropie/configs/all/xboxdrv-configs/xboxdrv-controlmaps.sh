@@ -118,7 +118,7 @@ intellivision="--ui-axismap X1=KEY_S:KEY_D,Y1=KEY_E:KEY_X \
 	--ui-buttonmap guide=KEY_ENTER"
 	
 intellivision_p2="--ui-axismap X1=KEY_J:KEY_K,Y1=KEY_I:KEY_M \
-	--ui-axismap Y2=KEY_KP2:KEY_KP8,X2=KEY_KP4:KEY_KP6,lt+Y2=KEY_KP1:KEY_KP7,rt+Y2=KEY_KP3:KEY_KP9 \
+	--ui-axismap Y2=KEY_KP8:KEY_KP2,X2=KEY_KP4:KEY_KP6,lt+Y2=KEY_KP7:KEY_KP1,rt+Y2=KEY_KP9:KEY_KP3 \
 	--ui-buttonmap tr=KEY_KP5,b=KEY_ENTER,rb=KEY_KP0,lb=KEY_DOT \
 	--ui-buttonmap a=KEY_RIGHTSHIFT,x=KEY_RIGHTCTRL,y=KEY_RIGHTALT,lt+back=KEY_F12,back+start=KEY_F1,lt=KEY_HOME,rt=KEY_HOME,tl=KEY_HOME,du=KEY_I,dd=KEY_M,dl=KEY_J,dr=KEY_K,back=KEY_HOME,start=KEY_PAUSE \
 	--ui-buttonmap guide=KEY_ENTER"
