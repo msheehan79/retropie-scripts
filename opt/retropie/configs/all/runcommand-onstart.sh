@@ -107,6 +107,15 @@ case $1 in
 				echo $joycommand >> /dev/shm/runcommand.info
 				eval $joycommand
 			;;
+			"Zaxxon (World).int")
+				$xboxkill
+				joycommand="$basicConfig ${player1['id']} ${player1['map']} $intellivision_p2 &"
+				if [ ${#player2[@]} -gt 0 ]; then
+					joycommand="$joycommand $basicConfig ${player2['id']} ${player2['map']} $intellivision &"
+				fi
+				echo $joycommand >> /dev/shm/runcommand.info
+				eval $joycommand
+            ;;
 			"Beauty and the Beast (World).int"|"BurgerTime (World).int"|"Congo Bongo (World).int"|"Dig Dug (World).int"|\
 			"Donkey Kong (World).int"|"Donkey Kong Jr (World).int"|"Duncan's Thin Ice (World).int"|"Lock 'N' Chase (World).int"|\
 			"Mouse Trap (World).int"|"Night Stalker (World).int"|"Pac-Man (World).int"|"Popeye (World).int"|"Tutankham (World).int")
